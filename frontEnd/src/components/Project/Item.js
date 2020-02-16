@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "react-bootstrap/Card";
+import detailPage from "./detailPage";
 
 class Item extends Component {
   render() {

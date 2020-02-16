@@ -44,6 +44,18 @@ class Header extends Component {
                   Parking
                 </a>
               </li>
+
+              <li className="nav-item">
+                <a className="nav-link" href="/">
+                  NotifyMe
+                </a>
+              </li>
+
+              <li className="nav-item">
+                <a className="nav-link" href="/">
+                  ArrangeMe
+                </a>
+              </li>
             </ul>
           </div>
         </div>

@@ -11,7 +11,6 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/questrush/project/web/BuildingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questrush/project/web/BuildingController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontEnd/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontEnd/src/actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/actions/types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontEnd/src/components/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/components/Dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontEnd/src/components/Project/AddProject.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/components/Project/AddProject.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontEnd/src/reducers/projectReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/src/reducers/projectReducer.js" afterDir="false" />
     </list>
@@ -84,7 +83,7 @@
       <option name="presentableId" value="Default" />
       <updated>1581841219752</updated>
       <workItem from="1581841221742" duration="3000" />
-      <workItem from="1581841258060" duration="11186000" />
+      <workItem from="1581841258060" duration="11487000" />
     </task>
     <servers />
   </component>
