@@ -7,6 +7,9 @@ export default class detailPage extends Component {
         return (
           <React.Fragment>
             <Container maxWdith="lg">
+              <h1 className="display-4 text-center">
+                Detail Page
+              </h1>
               <div class="scheduleContainer MuiGrid-root">
                 <div class="time start-800">8:00</div>
                 <div class="time start-830">8:30</div>
