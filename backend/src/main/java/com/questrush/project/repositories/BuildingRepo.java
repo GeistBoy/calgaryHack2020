@@ -9,5 +9,5 @@ public interface BuildingRepo extends CrudRepository<Building, Long> {
 
     Iterable<Building> findByBuildingType(int type);
 
-    Building findByBuildingTypeOrderByLoadAsc(int buildingType);
+    Iterable<Building> findAllByBuildingTypeOrderByLoadAsc(int buildingType);
 }

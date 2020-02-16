@@ -2,14 +2,23 @@ import React, { Component } from "react";
 import Item from "./Project/Item";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getEmptyBuilding } from "../actions/buildingActions";
-import Container from "@material-ui/core/Container"
-import Grid from "@material-ui/core/Grid"
+import { getEmptyBuilding, updateBuilding } from "../actions/buildingActions";
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import axios from "axios"
 
 class Dashboard extends Component {
-
+  
   componentDidMount() {
     this.props.getEmptyBuilding();
+    try{
+      setInterval(() => {
+        axios.post("http://localhost:8080/building/update");
+        this.props.getEmptyBuilding();
+      }, 2000);
+    } catch (e){
+      console.log(e)
+    }
   }
 
   render() {
@@ -24,7 +33,7 @@ class Dashboard extends Component {
                 Most Recent Empty Buildings
               </h1>
               <hr />
-              <Container maxWidth="lg" >
+              <Container maxWidth="lg">
                 <Grid container spacing={1}>
                   {buildings.map(building => (
                     <Item key={building.id} building={building} />
@@ -41,7 +50,8 @@ class Dashboard extends Component {
 
 Dashboard.propTypes = {
   building: PropTypes.object.isRequired,
-  getEmptyBuilding: PropTypes.func.isRequired
+  getEmptyBuilding: PropTypes.func.isRequired,
+  updateBuilding: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({

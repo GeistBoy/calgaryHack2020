@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_ERRORS, GET_BUILDINGS_EMPTY, GET_BUILDINGS_TYPE } from "./types";
+import { GET_ERRORS, GET_BUILDINGS_EMPTY, GET_BUILDINGS_TYPE, UPDATE_BUILDING } from "./types";
 
 export const createBuilding = (history) => async dispatch => {
   try {
@@ -16,6 +16,14 @@ export const createBuilding = (history) => async dispatch => {
     });
   }
 };
+
+export const updateBuilding = () => async dispatch => {
+  const res = await axios.post("http://localhost:8080/building/update");
+  dispatch({
+    type: GET_BUILDINGS_EMPTY,
+    payload: res.data
+  });
+}
 
 export const getEmptyBuilding = () => async dispatch => {
   const res = await axios.get("http://localhost:8080/building/empty");

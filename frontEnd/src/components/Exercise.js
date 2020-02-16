@@ -6,9 +6,20 @@ import { getByType } from "../actions/buildingActions";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 
+import axios from "axios"
+
 class Dashboard extends Component {
+
   componentDidMount() {
     this.props.getByType(2);
+    try {
+      setInterval(() => {
+        axios.post("http://localhost:8080/building/update");
+        this.props.getByType(2);
+      }, 2000);
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   render() {

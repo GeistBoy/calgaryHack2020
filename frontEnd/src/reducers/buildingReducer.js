@@ -1,4 +1,8 @@
-import { GET_BUILDINGS_EMPTY, GET_BUILDINGS_TYPE } from "../actions/types";
+import {
+  GET_BUILDINGS_EMPTY,
+  GET_BUILDINGS_TYPE,
+  UPDATE_BUILDING
+} from "../actions/types";
 
 const initialState = {
   buildings: [],
@@ -18,6 +22,12 @@ export default function(state = initialState, action) {
         ...state,
         buildings: action.payload
       };
+
+    case UPDATE_BUILDING:
+      return {
+        ...state,
+        buildings: action.payload
+      }
 
     default:
       return state;

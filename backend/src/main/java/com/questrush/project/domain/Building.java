@@ -1,5 +1,7 @@
 package com.questrush.project.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -22,6 +24,7 @@ public class Building {
     private int current;
     private float load;
 
+    @JsonFormat(pattern = "HH:mm")
     private Date update_at;
 
     @PrePersist
@@ -32,7 +35,6 @@ public class Building {
     @PreUpdate
     public void beforeUpdate(){
         update_at = new Date();
-        load = current / capacity;
     }
 
     public long getId() {

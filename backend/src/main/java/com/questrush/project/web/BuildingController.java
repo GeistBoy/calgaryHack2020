@@ -27,4 +27,9 @@ public class BuildingController {
     public Iterable<Building> mostEmptyNow(){
         return service.mostEmptyNow();
     }
+
+    @PostMapping("/update")
+    public void update(){
+        service.updateAll();
+    }
 }

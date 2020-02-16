@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -17,6 +18,7 @@ public class BuildingService {
     // 2 - Exercise
     // 3 - Parking
     int totalTypes = 4;
+    int randomNum = 20;
 
     @Autowired
     private BuildingRepo buildingRepo;
@@ -56,10 +58,16 @@ public class BuildingService {
         buildingRepo.save(building2);
         buildingRepo.save(building3);
         buildingRepo.save(building4);
-    }
 
-    public void create(){
-
+        for(int i=0; i<randomNum; i++){
+            Building building = new Building();
+            building.setName("Random Building " + i);
+            building.setBuildingType(rand.nextInt(4));
+            building.setCapacity(rand.nextInt(100));
+            building.setCurrent(rand.nextInt(80));
+            building.setLoad(rand.nextFloat());
+            buildingRepo.save(building);
+        }
     }
 
     public Iterable<Building> findByType(int type){
@@ -69,11 +77,22 @@ public class BuildingService {
     public Iterable<Building> mostEmptyNow(){
         List<Building> list = new ArrayList<>();
         for(int i=0; i<totalTypes; i++){
-            list.add(buildingRepo.findByBuildingTypeOrderByLoadAsc(i));
+            list.add(buildingRepo.findAllByBuildingTypeOrderByLoadAsc(i).iterator().next());
         }
 
         Iterable<Building> result = list;
 
         return result;
+    }
+
+    public void updateAll(){
+        Iterable<Building> list = buildingRepo.findAll();
+        Iterator<Building> iter = list.iterator();
+        Random random = new Random();
+        while(iter.hasNext()){
+            Building building = iter.next();
+            building.setLoad(random.nextFloat());
+            buildingRepo.save(building);
+        }
     }
 }
