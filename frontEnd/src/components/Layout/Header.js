@@ -56,6 +56,11 @@ class Header extends Component {
                   ArrangeMe
                 </a>
               </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/">
+                  AssistMe
+                </a>
+              </li>
             </ul>
           </div>
         </div>
